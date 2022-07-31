@@ -10,20 +10,19 @@ function tambah(nama) {
         arrPenumpang.push(nama)
         return arrPenumpang
     } else {
-        // Variabel kosong utk menampung isi value fungsi cari
-        let s = ""
         // Fungsi utk mencari apakah nama penumpang sudah ada atau belum
-        function cari(nama) {
+        // arrow function untuk membuat variabel yg di isi dengan fungsi
+        let = cari = nama => {
             // Looping value array
             for( i = 0 ; i < arrPenumpang.length ; i++){
                 // Jika value nama sama dgn isi array maka variabel s = true
                 if (nama === arrPenumpang[i]){
-                    return s = true
+                    return cari = true
                 } 
                 // Jika value nama tidak ada di dalam array maka variabel s = false,
                 // looping hingga nilai i = isi array paling terakhir
                 else if (i === arrPenumpang.length - 1) { 
-                    return s = false
+                    return cari = false
                 }
             }
         }
@@ -32,12 +31,12 @@ function tambah(nama) {
         // looping array untuk mengisi nilai
         for (i = 0; i < arrPenumpang.length; i++) {
             // Jika isi array ada yg undefined dan namanya belum ada di dalam array. langsung masuk ke array kosong tersebut
-            if (arrPenumpang[i] === undefined && s === false) {
+            if (arrPenumpang[i] === undefined && cari === false) {
                 arrPenumpang[i] = nama
                 return arrPenumpang
             } 
             // Jika namanya sudah ada, maka loop berakhir
-            else if (s === true) {
+            else if (cari === true) {
                 console.log(`${nama} sudah naik`)
                 return arrPenumpang
             }
@@ -63,6 +62,7 @@ function turun(nama) {
             // Jika menemukan nama yg sama dgn isi array maka langsung ubah menjadi undefined
             if (arrPenumpang[i] === nama) {
                 arrPenumpang[i] = undefined;
+                return arrPenumpang
             } 
             // Jika nama tidak ada, fungsi berakhir
             // looping sampai nilai terakhir array
